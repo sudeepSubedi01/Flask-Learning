@@ -1,0 +1,11 @@
+Setting up the environment:
+virtualenv env
+Set-ExecutionPolicy unrestricted
+(if error encountered go to powershell admin and then run this and choose YES)
+pip install virtualenv
+.\env\Scripts\activate.ps1
+pip install flask
+
+
+Run the code:
+python filepath

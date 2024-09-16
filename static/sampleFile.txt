@@ -1,0 +1,2 @@
+When we put something in this static folder, we can render this in the browser with portaddress/static/thisfilename.
+If that file is other file, it will be downloaded.
