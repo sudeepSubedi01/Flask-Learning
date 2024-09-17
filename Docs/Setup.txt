@@ -8,4 +8,5 @@ pip install flask
 
 
 Run the code:
+.\env\Scripts\activate.ps1
 python filepath
