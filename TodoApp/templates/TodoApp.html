@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block titlepart %} Home {% endblock titlepart %}
+{% block bodypart %}
+  <div class="my-[30px] flex flex-col items-center">
+    <div class="font-bold text-[20px] underline">Add Tasks</div>
+    <form action="/" method="POST">
+      <div>
+        <div class="font-bold">Title:</div>
+        <div> <input type="text" name="title" class="w-[500px] h-[40px] border-2 border-blue-500 rounded-lg bg-red-200" required> </div>
+      </div>
+      <div>
+        <div class="font-bold">Description:</div>
+        <div> <input type="text" name="description" class="w-[500px] h-[40px] border-2 border-blue-500 rounded-lg bg-red-200" required> </div>
+      </div>
+      <div class="mt-[10px] flex justify-center">
+        <button type="submit" class="py-[4px] px-[8px] border-2 border- rounded-lg bg-blue-200 hover:bg-blue-500 hover:border-blue-800 hover:text-[white]">Add to Tasks</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="my-[30px] flex flex-col mx-auto w-full max-w-3xl">
+    <div class="font-bold text-[20px] underline mb-[10px] flex justify-center"> <span>Your Pending Tasks</span> </div>
+    {%if allTodo|length == 0%}
+      <div class="text-center">No tasks pending</div>
+    {%else%}
+      <div class="pb-[10px] grid grid-cols-5 gap-[50px] mb-[10px] text-left border-b border-black">
+        <div class="font-bold">SN</div>
+        <div class="font-bold">Title</div>
+        <div class="font-bold">Description</div>
+        <div class="font-bold">Time Added</div>
+      </div>
+      {% for todo in allTodo %}
+        <div class="mb-[8px] grid grid-cols-5 gap-[50px] border-b border-grey">
+          <div>{{loop.index}}</div>
+          <div>{{todo.title}}</div>
+          <div>{{todo.description}}</div>
+          <div>{{todo.date_created}}</div>
+          <div class="flex" >
+            <a href="/delete/{{todo.sn}}"><button class="p-[5px] w-[70px] h-[36px] border bg-blue-500 rounded-lg text-balck border-white hover:border-red-800 hover:text-white">Done</button></a>
+            <a href="/update/{{todo.sn}}"><button class="ml-[5px] p-[5px] w-[70px] h-[36px] border bg-blue-500 rounded-lg text-balck border-white hover:border-red-800 hover:text-white">Update</button></a>
+          </div>
+        </div>
+      {% endfor %}
+    {%endif%}
+  </div>
+
+{% endblock bodypart %}
