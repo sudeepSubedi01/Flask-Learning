@@ -6,6 +6,15 @@
   <title>Demo Site - {{title}}</title>
 </head>
 <body>
-  <h1> This is the {{title}} page</h1>
+  <ul> 
+    <li> <a href=" {{ url_for('home') }} ">Home</a> </li>
+    <li> <a href=" {{ url_for('about') }} ">About</a> </li>
+    <li> <a href=" {{ url_for('calculate', num=5) }} ">Evaluate</a> </li>
+    <li> <a href=" {{ url_for('emp_info') }} ">Employees</a> </li>
+  </ul>
+  <h1> {{title}} </h1>
+
+  {% block content %}
+  {% endblock %}
 </body>
 </html>

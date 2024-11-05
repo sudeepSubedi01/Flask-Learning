@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <h3> {{number}} </h3>
+
+  {% if (number == 0) %}
+    <p>This is zero</p>
+  {%elif (number % 2 == 0) %}
+    <p>This is an even number</p>
+  {%else%}
+    <p>This is an odd number</p>
+  {% endif %}
+
+
+{% endblock %}

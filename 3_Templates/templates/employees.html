@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content%}
+<h3>This is the content of employees.html only</h3>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Position</th>
+  </tr>
+  {% for emp_id, info in data.items() %}
+    <tr>
+      <td>{{emp_id}}</td>
+      <td>{{info['name']}}</td>
+      <td>{{info['age']}}</td>
+      <td>{{info['position']}}</td>
+    </tr>
+  {% endfor %}
+</table>
+{%endblock%}
