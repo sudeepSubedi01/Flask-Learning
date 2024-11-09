@@ -27,5 +27,3 @@ with app.app_context():
   db.create_all()
 
 - now todo.db is created in the folder 'instance'
-
-- to view this file:
