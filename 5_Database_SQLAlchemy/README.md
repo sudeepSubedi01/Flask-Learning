@@ -195,4 +195,10 @@ steve = Customer (name='Steve', email='steve@mail.com')
 tony = Customer(name='Tony', email='tony@mail.com') 
 peter = Customer (name='Peter', email='peter@mail.com') 
 matt = Customer(name='Matt', email='matt@mail.com')
+
+bowl =  Product(product='Bowl', price=5) 
+plate = Product(product='Plate', price=8) 
+knife = Product (product='Knife', price=3)  
+scissors = Product(product='Scissors', price=2.5)
+cup  = Product(product='Cup', price=1.5)
 ```
