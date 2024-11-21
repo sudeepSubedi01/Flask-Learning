@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{page_title}}</title>
+</head>
+<body>
+  <h1>Welcome to Airline Price Prediction App</h1>
+  <a href="{{url_for('home')}}"><h3>Home</h3></a>
+  <a href="{{url_for('about')}}"><h3>About</h3></a>
+  <a href="{{url_for('login')}}"><h3>Login</h3></a>
+  <a href="{{url_for('prediction')}}"><h3>Prediction</h3></a>
+  {% block other_content %}
+  {% endblock %}
+</body>
+</html>
