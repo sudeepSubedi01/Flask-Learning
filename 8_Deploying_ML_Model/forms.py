@@ -1,6 +1,6 @@
 import pandas as pd
 from flask_wtf import FlaskForm
-from wtforms import DateField,SelectField,TimeField,IntegerField
+from wtforms import DateField,SelectField,TimeField,IntegerField,SubmitField
 from wtforms.validators import DataRequired
 
 train = pd.read_csv('data/train.csv')
@@ -16,3 +16,5 @@ class InputForm(FlaskForm):
   arrival_time = TimeField(label='Arrival Time', validators=[DataRequired()])
   duration = IntegerField(label='Duration', validators=[DataRequired()])
   total_stops = IntegerField(label='Total Stops', validators=[DataRequired()])
+  additional_info = SelectField(label='Total Stops', choices=x_data['additional_info'].unique())
+  predict_btn = SubmitField(label='Predict')
